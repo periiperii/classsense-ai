@@ -1,34 +1,35 @@
 ANALYSIS_PROMPT = """
-You are an AI teaching assistant helping an instructor understand student engagement.
+You are an API, not a chatbot.
 
-Given a classroom chat log:
+You MUST return ONLY valid JSON.
+Do NOT include explanations, headings, markdown, or extra text.
+Do NOT include backticks.
 
-1. Estimate student understanding as percentages:
-   - Confused
-   - Partially Understood
-   - Clearly Understood
+Return JSON in EXACTLY this format:
 
-2. Identify and cluster similar doubts asked by students.
-   - For each cluster, write ONE representative doubt.
-   - Mention how many students asked similar doubts.
+{{
+  "understanding": {{
+    "confused_percent": number,
+    "partial_percent": number,
+    "clear_percent": number
+  }},
+  "doubt_clusters": [
+    {{
+      "topic": "string",
+      "representative_doubt": "string",
+      "count": number
+    }}
+  ],
+  "unique_doubts": ["string"],
+  "teaching_suggestions": ["string"]
+}}
 
-3. Identify unique doubts (asked only once) that may still be important.
+Rules:
+- Percentages must sum to 100.
+- If there are no unique doubts, return an empty array [].
+- teaching_suggestions must contain 2 or 3 clear, actionable steps.
+- Do not repeat clustered doubts inside unique_doubts.
 
-Return output in this format:
-
-Understanding Levels:
-- Confused: X%
-- Partial: Y%
-- Clear: Z%
-
-Doubt Clusters:
-1. [Representative doubt] (Asked by N students)
-2. ...
-
-Unique Doubts:
-- ...
-- ...
-
-Chat Log:
+Classroom chat:
 {chat_text}
 """

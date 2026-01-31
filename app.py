@@ -97,3 +97,4 @@ if st.button("Analyze Chat"):
 
         for doubt in result["unique_doubts"]:
             st.markdown(f"- {doubt}")
+st.caption("Instead of scanning hundreds of messages, teachers receive one-click insights and actionable guidance.")

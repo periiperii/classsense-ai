@@ -1,6 +1,61 @@
-1. i understood completely
-2. loved the explanation
-3. i dont understand how the example is relevant
-4. dont get it
-5. example is confusing
-6. what is the topic
+I understood the intro
+Can you explain the example again?
+Example is confusing
+I get the theory but not the example
+Yes got it
+What is the topic?
+I didn't understand the recursion part
+Recursion is confusing
+Can you slow down a bit?
+All clear from my side
+Example doesn’t match the concept
+I’m lost
+Got it now thanks
+What is the base case?
+Base case again please
+Understood completely
+Not clear
+I think I get it but unsure
+Why are we using this method?
+Method explanation pls
+Yes makes sense
+No idea what’s happening
+Could you repeat that?
+I missed the last part
+All good
+Still confused
+Is this in syllabus?
+What’s the real-world use?
+I like the explanation
+Example still confusing
+Please share notes
+Got it 👍
+Topic name again?
+Can you explain in simpler words?
+This is clear now
+Half understood
+I’m okay
+Not okay
+Can we do one more example?
+Another example please
+Clear
+Confusing example
+Can you connect example to theory?
+Why this approach?
+Good explanation
+Didn’t understand step 3
+Step 3 again pls
+I zoned out what happened
+Makes sense now
+Still not clear
+Got it fully
+No doubts
+I have doubt about variables
+Variables part confusing
+Understood variables
+I’m lost again
+Example mismatch
+Yes clear now
+Topic please?
+Can we revise?
+All good now

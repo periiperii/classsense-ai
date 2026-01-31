@@ -6,8 +6,8 @@ st.set_page_config(page_title="ClassSense AI", layout="wide")
 
 st.title("📊 ClassSense AI")
 st.caption(
-    "An AI assistant that helps teachers understand student confusion "
-    "and unanswered doubts using natural language analysis (Powered by Google Gemini)."
+    "An AI assistant that helps teachers understand every student's confusion "
+    "and unanswered doubts during online lectures (Powered by Google Gemini)."
 )
 
 st.markdown(
@@ -18,15 +18,18 @@ st.markdown(
 
 
 chat_input = st.text_area(
-    "Paste classroom chat here:",
+    "📎 Paste chat exported from Zoom / Google Meet",
     height=250,
     placeholder=(
-        "Student A: I understood completely\n"
+        "Student A: I understood\n"
         "Student B: I don’t understand how the example is relevant\n"
-        "Student C: The example is confusing\n"
-        "Student D: What is the topic?"
+        "OR simply\n"
+        "What is the topic?"
     )
 )
+st.caption(
+    "⏱️ Let students respond for a few minutes, then analyze engagement in one snapshot.")
+
 
 uploaded_file = st.file_uploader("Or upload chat file (.txt)", type=["txt"])
 
@@ -53,6 +56,18 @@ if st.button("Analyze Chat"):
             "the topic, inferred from their messages in the chat."
         )
         st.bar_chart(result["understanding"])
+        st.markdown("## 🚦 Class Urgency Level")
+        urgency = result["urgency"]
+
+        if urgency == "High":
+            st.error(
+                "High confusion detected. Consider pausing and re-explaining the concept.")
+        elif urgency == "Medium":
+            st.warning(
+                "Some confusion detected. A brief clarification may help.")
+        else:
+            st.success("Most students seem comfortable. You may proceed.")
+
         st.markdown("## 🎯 Teaching Suggestions")
         st.write(
             "Based on student confusion patterns, here are suggested next steps for the instructor."
